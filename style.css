@@ -6,7 +6,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas:
-    "navbar navbar navbar navbar"
     ". article article tip"
     ". related-articles most-popular ."
     ". editors-picks most-popular ."
@@ -24,6 +23,12 @@ img {
 /* TOP NAVBAR */
 .main-nav {
   grid-area: navbar;
+  position: fixed;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr;
+  background: white;
+  top: 0;
 }
 
 .main-nav ul {
@@ -33,6 +38,7 @@ img {
   justify-items: center;
   grid-gap: 20px;
   align-items: center;
+  padding: 20px;
 }
 
 .main-nav li a {
@@ -225,7 +231,6 @@ img {
   .wrapper {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "navbar"
       "article "
       "related-articles"
       "editors-picks"
@@ -241,8 +246,29 @@ img {
   }
 
   .mobile-nav {
-    display: block;
+    display: grid;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: white;
     text-align: center;
+  }
+
+  .mobile-nav ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+
+  .mobile-nav li {
+    display: inline;
+  }
+
+  .mobile-nav li a {
+    text-decoration: none;
+    font-size: 40px;
+    color: var(--black);
   }
 
   .mobile-nav img {
